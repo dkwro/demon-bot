@@ -181,7 +181,7 @@ async def removelevel(interaction: discord.Interaction, name: str):
 @app_commands.describe(user='Player', level='Level name/ID', percent='Percentage 1-100')
 async def record(interaction: discord.Interaction, user: discord.User, level: str, percent: int):
     if not is_admin(interaction): return await interaction.response.send_message('You don't have permission.', ephemeral=True)
-    if not 1<=percent<=100: return await interaction.response.send_message('Percentage must be 1-100.', ephemeral=True)
+    if not 1<=percent<=100: return await interaction.response.send_message('Percentage must be 65-100.', ephemeral=True)
     l=get_level(level)
     if not l: return await interaction.response.send_message('Level not found.', ephemeral=True)
     c=connect()
